@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shizumusic</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="description" content="Shizumusic - stream, download and save your favourite songs.">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Shizumusic">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="views" role="main"></div>
+
+<div id="mini" class="mini hidden">
+  <div class="mini-main" id="miniOpen">
+    <div class="art sm" id="miniArt"></div>
+    <div class="mini-text"><div class="t1" id="miniTitle"></div><div class="t2" id="miniArtist"></div></div>
+  </div>
+  <button class="icon-btn" id="miniPlay" aria-label="Play/Pause"></button>
+  <button class="icon-btn" id="miniNext" aria-label="Next"></button>
+  <div class="mini-progress"><i id="miniBar"></i></div>
+</div>
+
+<nav id="tabbar" class="tabbar">
+  <button data-tab="home" class="active"><span class="ti"></span><span>Home</span></button>
+  <button data-tab="search"><span class="ti"></span><span>Search</span></button>
+  <button data-tab="library"><span class="ti"></span><span>Library</span></button>
+</nav>
+
+<section id="player" class="player" aria-hidden="true">
+  <div class="player-bg" id="playerBg"></div>
+  <div class="player-inner">
+    <div class="grabber" id="playerClose"></div>
+    <div class="player-art-wrap"><div class="art xl" id="playerArt"></div></div>
+    <div class="player-meta">
+      <div class="pm-text"><div class="pm-title" id="pTitle"></div><div class="pm-artist" id="pArtist"></div></div>
+      <button class="icon-btn" id="pFav" aria-label="Favourite"></button>
+      <button class="icon-btn" id="pMore" aria-label="More"></button>
+    </div>
+    <div class="scrub">
+      <input type="range" id="seek" min="0" max="1000" value="0" step="1" aria-label="Seek">
+      <div class="times"><span id="tCur">0:00</span><span id="tLeft">-0:00</span></div>
+    </div>
+    <div class="controls">
+      <button class="icon-btn lg" id="cPrev" aria-label="Previous"></button>
+      <button class="icon-btn xl" id="cPlay" aria-label="Play/Pause"></button>
+      <button class="icon-btn lg" id="cNext" aria-label="Next"></button>
+    </div>
+    <div class="extras">
+      <button class="icon-btn tog" id="xShuffle" aria-label="Shuffle"></button>
+      <button class="icon-btn tog" id="xRepeat" aria-label="Repeat"></button>
+      <button class="icon-btn tog" id="xAuto" aria-label="Autoplay"></button>
+      <button class="icon-btn" id="xDownload" aria-label="Download"></button>
+      <button class="icon-btn" id="xQueue" aria-label="Queue"></button>
+    </div>
+  </div>
+</section>
+
+<div id="sheetRoot"></div>
+<div id="toast" class="toast"></div>
+<audio id="audio" preload="auto" playsinline></audio>
+<script src="app.js"></script>
+</body>
+</html>

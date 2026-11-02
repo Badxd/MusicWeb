@@ -1,0 +1,9 @@
+{
+  "name": "Shizumusic",
+  "description": "Clean iOS style music web app",
+  "keywords": ["music", "player", "node"],
+  "stack": "heroku-24",
+  "env": {
+    "APP_NAME": { "description": "App name sent to the music API", "value": "Shizumusic" }
+  }
+}

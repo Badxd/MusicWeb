@@ -1,0 +1,10 @@
+{
+  "name": "shizumusic",
+  "version": "1.0.0",
+  "description": "Shizumusic - clean iOS style music web app (play, download, playlists, autoplay)",
+  "main": "server.js",
+  "private": true,
+  "scripts": { "start": "node server.js", "mock": "node test/mock-audius.js" },
+  "engines": { "node": ">=18" },
+  "dependencies": { "express": "^4.19.2" }
+}
